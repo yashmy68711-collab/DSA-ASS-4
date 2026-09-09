@@ -154,23 +154,3 @@ def main():
     print("After delete 60 (One Child):", bst.inorder_traversal(bst.root, []))
     bst.delete(50) # Two children
     print("After delete 50 (Two Children):", bst.inorder_traversal(bst.root, []))
-
-    print("\n--- TASK 2: GRAPH TESTING ---")
-    g = Graph()
-    edges = [('A','B',2), ('A','C',4), ('B','D',7), ('B','E',3), ('C','E',1), ('D','F',5), ('E','D',2), ('E','F',6), ('C','F',8)]
-    for u, v, w in edges: g.add_edge(u, v, w)
-    print("Adjacency List:", g.adj_list)
-    print("BFS from A:", g.bfs('A'))
-    print("DFS from A:", g.dfs('A'))
-
-    print("\n--- TASK 3: HASH TABLE TESTING ---")
-    ht = HashTable(5)
-    keys = [10, 15, 20, 7, 12]
-    for k in keys: ht.insert(k, f"Val_{k}")
-    print("Table State (Collisions expected at index 0):", ht.table)
-    print("Get 15:", ht.get(15), "| Get 7:", ht.get(7), "| Get 12:", ht.get(12))
-    ht.delete(15)
-    print("Bucket 0 after deleting 15:", ht.table[0])
-
-if __name__ == "__main__":
-    main()
